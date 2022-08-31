@@ -127,7 +127,7 @@ Validity subject to MS SQL constraints and combination of on_delete & on_update 
 
 # Version info
 |Name |Release Date|Notes|
-|----:|------------|-----|
+|-----|------------|-----|
 |v1.0 |22-Jan-2022 |First Version|
 |v1.1 |04-Aug-2022 |Minor Bug Fixes|
 
