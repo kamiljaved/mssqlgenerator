@@ -1,0 +1,50 @@
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+dist/
+lib/
+lib64/
+
+# Log stuff:
+*.log
+
+# PyBuilder
+target/
+
+# redis dumps
+dump.rdb
+*.rdb
+
+# scripts
+env.sh
+wenv.bat
+
+# notes
+# notes.txt
+
+# file locks
+.~lock*
+# $*
+
+# backup files
+*.bkp
+*.bak
+
+# docs and misc stuff
+docs/*
+misc/*
+backups/*
+out/*
+
+# config files
+.env

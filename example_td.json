@@ -1,0 +1,57 @@
+{
+    "name": "Location",
+    "dependents": ["Warehouse", "Store"],
+    "fields": {
+        "0": {
+            "name": "id",
+            "type": "INT",
+            "key": true
+        },
+        "1": {
+            "name": "name",
+            "type": "VARCHAR",
+            "type_args": [250],
+            "merge_type": "replace",
+            "constraints": ["not null"]
+        },
+        "2": {
+            "name": "country",
+            "type": "VARCHAR",
+            "type_args": [50],
+            "key": true,
+            "relation": {
+                "table": "Country",
+                "column": "id",
+                "enforce": true,
+                "on_delete": "set null",
+                "on_update": "cascade"
+            }
+        },
+        "3": {
+            "name": "owner",
+            "type": "VARCHAR",
+            "type_args": [250],
+            "constraints": ["not null"],
+            "merge_type": "replace",
+            "key": false,
+            "relation": {
+                "table": "Person",
+                "column": "id",
+                "enforce": true,
+                "on_delete": "no action",
+                "on_update": "cascade"
+            },
+            "about": "sum of amount for a day, picked from stock.location.amount"
+        },
+        "4": {
+            "name": "amount",
+            "type": "NUMERIC",
+            "type_args": [11, 2],
+            "constraints": ["default 0"],
+            "merge_type": "accumulate",
+            "about": "sum of amount for a day, picked from stock.location.amount"
+        }
+    },
+    "merge_on": ["id", "country"],
+    "about": "table for stock.location"
+}
